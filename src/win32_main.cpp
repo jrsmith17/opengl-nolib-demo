@@ -222,7 +222,7 @@ int CALLBACK WinMain(HINSTANCE instance, HINSTANCE prevInstance, LPSTR commandLi
 			"OpenGL NoLib Example",
 			WS_OVERLAPPEDWINDOW | WS_VISIBLE,
 			CW_USEDEFAULT, CW_USEDEFAULT,
-			1600, 800,
+			400, 400,
 			NULL,
 			NULL,
 			instance,
