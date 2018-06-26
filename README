@@ -1,0 +1,12 @@
+This project was made to demonstrate how one can start up a win32 / OpenGL 3.x without using libraries such as GLEW and GLFW.
+
+You can find the relevant blog post for this project [here](http://southstar.io/post/2018-06-25-opengl-basic-win32-setup-without-dependencies/).
+
+Installation and Setup:
+- CMake 3.7+ installed.
+- cd <project dir>
+- ./win32_build.bat
+- run from Visual Studio
+
+Notes:
+- I did not include all OpenGL functions nor will you need all the OpenGL functions I included. I left them there to show the user how the fill out the macro list. Please adjust to your specific needs.
