@@ -5,7 +5,7 @@ You can find the relevant blog post for this project [here](http://southstar.io/
 ## Installation and Setup:
 
 - CMake 3.7+ installed.
-- cd <project dir>
+- cd &lt;project dir&gt;
 - ./win32_build.bat
 - run from Visual Studio
 
