@@ -2,18 +2,18 @@ This project was made to demonstrate how one can start up a win32 / OpenGL 3.x w
 
 You can find the relevant blog post for this project [here](http://southstar.io/post/2018-06-25-opengl-basic-win32-setup-without-dependencies/).
 
-##Installation and Setup:
+## Installation and Setup:
 
 - CMake 3.7+ installed.
 - cd <project dir>
 - ./win32_build.bat
 - run from Visual Studio
 
-##Notes:
+## Notes:
 
 - I did not include all OpenGL functions nor will you need all the OpenGL functions I included. I left them there to show the user how the fill out the macro list. Please adjust to your specific needs.
 
-##License
+## License
 
 
 This software is available under 2 licenses -- choose whichever you prefer.
@@ -53,4 +53,3 @@ FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
 AUTHORS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN
 ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
 WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
-------------------------------------------------------------------------------
