@@ -6,9 +6,68 @@
 bool globalRunning = false;
 HWND globalWindow;
 
+// NOTE: I needed this in my specific project (code separated out into different DLLs). The demo project, as it
+// stands, does not require it. Leaving it here in case you end up setting your code in a similar manner and need it.
 //#define GLE(ret, name, ...) ret (*gl##name)(__VA_ARGS__);
 //	OPENGL_LIST
 //#undef GLE
+
+static void win32_processPendingMessages() {
+	MSG message;
+
+	while (PeekMessage(&message, 0, 0, 0, PM_REMOVE)) {
+		UINT msg = message.message;
+		
+		switch (msg) {
+		case WM_QUIT: {
+			globalRunning = false;
+		} break;
+
+		case WM_SYSKEYDOWN:
+		case WM_SYSKEYUP:
+		case WM_KEYDOWN:
+		case WM_KEYUP: {
+			// TODO(JR): eventually support different keyboard layouts
+			unsigned int vkCode = (unsigned int)message.wParam;
+
+			// NOTE(JR): must use == and != to convert bit tests to actual 0 or 1 vaues for wasDown/isDown
+			bool wasDown = ((message.lParam & (1 << 30)) != 0);
+			bool isDown = ((message.lParam & (1 << 31)) == 0);
+
+			if (wasDown != isDown) {
+				if (msg == WM_KEYDOWN) {
+					// Stub
+				}
+				if (message.message == WM_KEYUP) {
+					// Stub
+				}
+			}
+
+		} break;
+
+		case WM_LBUTTONDOWN:
+		case WM_RBUTTONDOWN:
+		case WM_MBUTTONDOWN: {
+			// Stub
+		} break;
+
+		case WM_LBUTTONUP:
+		case WM_RBUTTONUP:
+		case WM_MBUTTONUP: {
+			// Stub
+		} break;
+
+		case WM_MOUSEMOVE: {
+			// Stub
+		} break;
+
+		default: {
+			TranslateMessage(&message);
+			DispatchMessage(&message);
+		} break;
+		}
+	}
+}
 
 static LRESULT CALLBACK win32_mainWindowCallback(HWND window, UINT message, WPARAM wParam, LPARAM lParam) {
 	LRESULT result = 0;
@@ -171,7 +230,7 @@ int CALLBACK WinMain(HINSTANCE instance, HINSTANCE prevInstance, LPSTR commandLi
 			globalRunning = true;
 
 			while(globalRunning){
-				
+				win32_processPendingMessages();
 			}
 		}
 	}
