@@ -71,7 +71,7 @@ cmake -G "%platform%" -H. -B_build -DCMAKE_CONFIGURATION_TYPES=%cmakeTarget%
 
 tasklist /FI "IMAGENAME eq devenv.exe" 2>NUL | find /I /N "devenv.exe">NUL
 if not "%ERRORLEVEL%"=="0" (
-	START "" devenv.exe %~dp0\_build\thoth.sln
+	START "" devenv.exe %~dp0\_build\OpenGL_NoLib_Demo.sln
 )
 
 @echo on
